@@ -5,7 +5,7 @@ This repository stores the patch file (rena_patch.diff) for my customized Microp
 ```
 git clone https://github.com/yunkya2/micropython-x68k
 cd micropython-x68k
-git apply ../rena_patch.diff
+git apply ../ulab_patch.diff
 ```
 
 
