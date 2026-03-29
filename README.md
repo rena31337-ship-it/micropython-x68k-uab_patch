@@ -20,7 +20,28 @@ git apply ulab_patch.diff
 make -C mpy-cross && cd ports/x68k && make
 ```
 
+Tested features:
+- ndarray creation (array, zeros, ones)
+- reshape, transpose
+- slicing
+- elementwise operations
+- reductions (sum, min, max, mean)
+- dot (matmul)
+- FFT
+- repeat
+- flatten
+- memory limit behavior
 
+動作確認済み:
+- ndarray 基本操作
+- reshape / transpose
+- スライス
+- 要素演算
+- 各種集約関数
+- 行列積
+- FFT
+- repeat / flatten
+- メモリ限界テスト
 
 ```python
 from ulab import numpy as np
