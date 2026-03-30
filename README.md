@@ -19,6 +19,14 @@ cd micropython-x68k
 git apply ulab_patch.diff
 make -C mpy-cross && cd ports/x68k && make
 ```
+⚠️ 注意：サンプルコードは UTF-8 になっているので、X68000 で実行する前に Shift-JIS に変換してください。
+
+⚠️ Note: Sample Python scripts are stored as UTF-8 on GitHub.
+X68000 MicroPython does not fully support UTF-8 multibyte characters, so
+please convert .py files to Shift-JIS before running them on X68000.
+
+
+
 
 Tested features:
 - ndarray creation (array, zeros, ones)
