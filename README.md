@@ -11,7 +11,7 @@ configuration, and also includes a lightweight implementation of complex ndarray
 ```
 git clone https://github.com/yunkya2/micropython-x68k.git
 cd micropython-x68k
-git apply ulab_patch.diff
+git apply --whitespace=fix ulab_patch.patch
 make -C mpy-cross && cd ports/x68k && make
 ```
 
@@ -95,7 +95,7 @@ micropython-x68k-ulab_patch
 ```
 git clone https://github.com/yunkya2/micropython-x68k.git
 cd micropython-x68k
-git apply ulab_patch.diff
+git apply --whitespace=fix ulab_patch.patch
 make -C mpy-cross && cd ports/x68k && make
 ```
 
