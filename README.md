@@ -70,10 +70,10 @@ array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], dtype=float32)
   reductions, dot, FFT, flatten, and the lightweight complex ndarray.
 
 ## Note:
-### The X68000 port of ulab does not implement the ndarray.reshape() method.
-### Calling a.reshape(...) will always raise an error on this platform.
-### Only the functional form np.reshape() exists, and even that supports
-### only limited use cases (mainly flattening to 1D).
+ The X68000 port of ulab does not implement the ndarray.reshape() method.
+ Calling a.reshape(...) will always raise an error on this platform.
+ Only the functional form np.reshape() exists, and even that supports
+ only limited use cases (mainly flattening to 1D).
 
 
 ### Encoding note
@@ -146,7 +146,7 @@ print(a.flatten())
   ndarray の生成、スライス、集約関数、行列積、FFT、
   flatten、軽量 complex ndarray など、主要な機能をまとめてテストできます。
 
-注意:
+## 注意:
 X68000 版 ulab には ndarray.reshape() メソッドが実装されていません。
 そのため a.reshape(...) を呼び出すと必ずエラーになります。
 利用できるのは関数版の np.reshape() のみですが、
