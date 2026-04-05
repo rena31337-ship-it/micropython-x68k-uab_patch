@@ -27,29 +27,23 @@ This is not NumPy compatible, but supports creation, indexing, printing, and vec
 Large arrays may fail due to memory constraints.
 (Example: 256×256 OK, 512×512 → MemoryError)
 
-## Tested features
+Tested features
 
-ndarray creation (array, zeros, ones)
+- ndarray creation (array, zeros, ones)
+- slicing
+- elementwise operations
+- reductions (sum, min, max, mean)
+- dot (matmul)
+- FFT
+- flatten
+- lightweight complex ndarray (non‑NumPy compatible)
+- memory limit behavior
 
-reshape / transpose
+Not supported on the X68000 port of ulab:
 
-slicing
-
-elementwise operations
-
-reductions (sum, min, max, mean)
-
-dot (matmul)
-
-FFT
-
-repeat
-
-flatten
-
-lightweight complex ndarray (non‑NumPy compatible)
-
-memory limit behavior
+- ndarray.reshape()
+- transpose()
+- repeat()
 
 ## Sample
 
@@ -72,10 +66,14 @@ array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0], dtype=float32)
 ## The repository includes a comprehensive test script:
 
 - sample/ulab_feature_test.py  
-  A full feature test covering ndarray creation, reshape, slicing,
-  reductions, dot, FFT, repeat, flatten, and the lightweight complex ndarray.
+  A full feature test covering ndarray creation, slicing,
+  reductions, dot, FFT, flatten, and the lightweight complex ndarray.
 
-Please convert the file to Shift‑JIS before running it on the X68000.
+# Note:
+# The X68000 port of ulab does not implement the ndarray.reshape() method.
+# Calling a.reshape(...) will always raise an error on this platform.
+# Only the functional form np.reshape() exists, and even that supports
+# only limited use cases (mainly flattening to 1D).
 
 
 ### Encoding note
@@ -113,27 +111,23 @@ X68000 上で動作するための軽量実装で、生成・アクセス・prin
 大規模配列はメモリ不足で失敗する可能性があります。
 （例：256×256 は OK、512×512 は MemoryError）
 
-## 動作確認済み
+動作確認済み
 
-ndarray 基本操作
+- ndarray 基本操作
+- スライス
+- 要素演算
+- 各種集約関数
+- 行列積
+- FFT
+- flatten
+- 軽量 complex ndarray（独自実装）
+- メモリ限界テスト
 
-reshape / transpose
+X68000 版 ulab では未実装:
 
-スライス
-
-要素演算
-
-各種集約関数
-
-行列積
-
-FFT
-
-repeat / flatten
-
-軽量 complex ndarray（独自実装）
-
-メモリ限界テスト
+- ndarray.reshape()
+- transpose()
+- repeat()
 
 ## サンプル
 
@@ -149,10 +143,14 @@ print(a.flatten())
 ## 以下の総合テストスクリプトを同梱しています：
 
 - sample/ulab_feature_test.py  
-  ndarray の生成、reshape、スライス、集約関数、行列積、FFT、repeat、
-  flatten、軽量 complex ndarray など、全機能をまとめてテストできます。
+  ndarray の生成、スライス、集約関数、行列積、FFT、
+  flatten、軽量 complex ndarray など、主要な機能をまとめてテストできます。
 
-X68000 で実行する前に Shift‑JIS に変換してください。
+注意:
+X68000 版 ulab には ndarray.reshape() メソッドが実装されていません。
+そのため a.reshape(...) を呼び出すと必ずエラーになります。
+利用できるのは関数版の np.reshape() のみですが、
+こちらも 1 次元への変換など、ごく限られた用途にしか対応していません。
 
 
 ## 文字コードについて
