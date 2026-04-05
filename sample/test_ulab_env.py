@@ -1,3 +1,4 @@
+# coding: shift_jis
 # test_ulab_env.py
 import time
 
