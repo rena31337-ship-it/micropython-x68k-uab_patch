@@ -104,7 +104,7 @@ Please convert .py files to Shift‑JIS before running them.
 micropython-x68k-ulab_patch
 
 このリポジトリは、X68000 用 Micropython に ulab を組み込んだ
-カスタムビルド向けのパッチファイル（ulab_patch.diff）を公開しています。
+カスタムビルド向けのパッチファイル（ulab_patch.patch）を公開しています。
 
 ```
 git clone https://github.com/yunkya2/micropython-x68k.git
