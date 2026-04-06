@@ -1,7 +1,7 @@
 ## This patch is intended for the Micropython for the X68000 source tree only.
 
 ## micropython-x68k-ulab_patch
-This repository stores the patch file (ulab_patch.diff) for my customized
+This repository stores the patch file (ulab_patch.patch) for my customized
 Micropython for the X68000 + ulab build.
 
 The patch enables several ulab features that are disabled in the default
